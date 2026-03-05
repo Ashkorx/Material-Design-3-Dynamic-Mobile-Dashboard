@@ -1,0 +1,43 @@
+type: vertical-stack
+cards:
+  - type: custom:bubble-card
+    card_type: pop-up
+    hash: "#people-timeline"
+    name: Timeline
+    icon: mdi:map
+    styles: |-
+      #root {
+              height: unset !important;
+              max-height: 100% !important;
+              transition: transform var(--md-sys-motion-expressive-spatial-default) !important;
+            }
+            .bubble-pop-up-container {
+              padding-bottom: 64px !important;
+            }
+            .bubble-close-button {
+              background: transparent !important;
+            }
+    button_type: name
+    sub_button:
+      main: []
+      bottom: []
+    slider_fill_orientation: left
+    slider_value_position: right
+  - type: custom:simple-tabs
+    tabs:
+      - title: Rey
+        icon: m3of:face
+        id: rey
+        card:
+          type: custom:location-timeline-card
+          entity: device_tracker.rey_s_phone
+          places_entity: sensor.rey_s_phone
+          osm_api_key: email
+      - title: Christina
+        icon: m3of:face-3
+        id: christina
+        card:
+          type: custom:location-timeline-card
+          entity: device_tracker.christina
+          places_entity: sensor.christina_s_phone
+          osm_api_key: email
