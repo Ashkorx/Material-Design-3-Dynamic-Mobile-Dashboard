@@ -6,7 +6,7 @@ cards:
       - type: custom:streamline-card
         template: title_subtitle_card
         variables:
-          title: 🚗 Driveway
+          title: Driveway
           subtitle: "{{ states ('sensor.right_driveway_camera_status') }}"
           animation_delay: 0.5s
       - type: custom:mushroom-chips-card
@@ -19,21 +19,33 @@ cards:
               else 'mdi:car-off' }}
             tap_action:
               action: toggle
-            card_mod:
-              style: |
-                ha-card {
-                  animation: slideDown 1.0s ease-out 1.0s both;
-                }
-                @keyframes slideDown {
-                  from { 
-                    opacity: 0;
-                    transform: translateY(-20px);
+            uix:
+              style:
+                .: |
+                  ha-card {
+                    --text-color: {{ 'var(--primary-text-color)' if is_state('automation.driveway_camera_vehicle_notification', 'on') else '#a8a8a8' }};
+                    --color: {{ 'var(--primary-text-color)' if is_state('automation.driveway_camera_vehicle_notification', 'on') else '#a8a8a8' }};
+                    animation: slideDown 1.0s ease-out 1.0s both;
                   }
-                  to { 
-                    opacity: 1;
-                    transform: translateY(0);
+                  @keyframes slideDown {
+                    from { 
+                      opacity: 1;
+                      transform: translateY(-4px);
+                    }
+                    to { 
+                      opacity: 1;
+                      transform: translateY(0);
+                    }
                   }
-                }
+                mushroom-chip$: |
+                  .chip {
+                    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                                color 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                  }
+                mushroom-chip$mushroom-state-icon$: |
+                  ha-state-icon {
+                    transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                  }
           - type: template
             entity: automation.driveway_camera_person_notification
             icon: >
@@ -42,22 +54,34 @@ cards:
               else 'm3o:sensors-krx-off' }}
             tap_action:
               action: toggle
-            card_mod:
-              style: |
-                ha-card {
-                  animation: slideDown 1.0s ease-out 1.3s both;
-                }
-                @keyframes slideDown {
-                  from { 
-                    opacity: 0;
-                    transform: translateY(-20px);
+            uix:
+              style:
+                .: |
+                  ha-card {
+                    --text-color: {{ 'var(--primary-text-color)' if is_state('automation.driveway_camera_person_notification', 'on') else '#a8a8a8' }};
+                    --color: {{ 'var(--primary-text-color)' if is_state('automation.driveway_camera_person_notification', 'on') else '#a8a8a8' }};
+                    animation: slideDown 1.0s ease-out 1.3s both;
                   }
-                  to { 
-                    opacity: 1;
-                    transform: translateY(0);
+                  @keyframes slideDown {
+                    from { 
+                      opacity: 1;
+                      transform: translateY(-4px);
+                    }
+                    to { 
+                      opacity: 1;
+                      transform: translateY(0);
+                    }
                   }
-                }
-        card_mod:
+                mushroom-chip$: |
+                  .chip {
+                    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                                color 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                  }
+                mushroom-chip$mushroom-state-icon$: |
+                  ha-state-icon {
+                    transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                  }
+        uix:
           style: |
             ha-card {
               position: absolute;
@@ -70,10 +94,15 @@ cards:
     cards:
       - type: vertical-stack
         cards:
-          - type: custom:webrtc-camera
-            url: >-
-              ffmpeg:rtsp://<id:password>@192.168.1.150/h265Preview_01_main#video=copy#audio=opus
-            muted: true
+          - type: custom:streamline-card
+            template: camera_rtsp_with_chips_card
+            variables:
+              camera_url: >-
+                ffmpeg:rtsp://[user:password]$@192.168.1.245/h265Preview_01_main#video=copy#audio=opus
+              entity_id_light_one: light.lights_ceiling
+              light_one_icon: hue:recessed-ceiling
+              entity_id_light_two: light.lights_wall
+              light_two_icon: hue:wall-appear
           - type: custom:streamline-card
             template: spacer_card
             variables:
@@ -84,28 +113,19 @@ cards:
             template: camera_rtsp_with_chips_card
             variables:
               camera_url: >-
-                ffmpeg:rtsp://<id:password>@192.168.1.245/h265Preview_01_main#video=copy#audio=opus
-              entity_id_light_one: switch.light_switch_drw
-              light_one_icon: m3of:lightbulb
-              entity_id_light_two: switch.porch_light
-              light_two_icon: m3of:lightbulb
+                ffmpeg:rtsp://[user:password]$@192.168.1.150/h265Preview_01_main#video=copy#audio=opus
+              entity_id_light_one: light.lights_ceiling
+              light_one_icon: hue:recessed-ceiling
+              entity_id_light_two: light.lights_wall
+              light_two_icon: hue:wall-appear
           - type: custom:streamline-card
             template: spacer_card
             variables:
               padding: 10px
-    card_mod:
+    uix:
       style: |
         :host {
           --simple-swipe-card-pagination-dot-active-color: var(--md-sys-color-primary);
-          --simple-swipe-card-pagination-dot-inactive-color: var(--md-sys-color-on-primary);
+          --simple-swipe-card-pagination-dot-inactive-color: color-mix(in srgb, var(--md-sys-color-on-primary) 50%, transparent);
           --simple-siwipe-card-pagnation-dot-size: 7px;
-           animation: fadeIn 2.5s ease-out  0.8s both;
-        }
-        @keyframes fadeIn {
-          from { 
-            opacity: 0;
-          }
-          to { 
-            opacity: 1;
-          }
         }
