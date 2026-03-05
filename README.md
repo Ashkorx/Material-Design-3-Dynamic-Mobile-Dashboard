@@ -28,9 +28,8 @@ Several cards are inspired by the incredible work of others in the Home Assistan
 
 The Overview page gives you a quick view and control of what matters most. At the top, it displays the current date, time, and a notification bell to running task such as sprinkler, or camera feed when the door is open, etc
 
-The [_weather summary_](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/blob/main/assets/greeting%2C%20alarmo%2C%20and%20notification%20bell) has been streamlined to fit one single line 
-
-There is a new [_person card_](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/blob/main/assets/Person%20card)
+The [_weather summary_](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/blob/main/assets/greeting%2C%20alarmo%2C%20and%20notification%20bell) has been optimized to fit one line for decluttering purpose.
+There is a new [_person card_](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/blob/main/assets/Person%20card) that will tell you if you are home and the other person is also home or away, with a personalized greeting.
 
 **_Home Tab_**
 
@@ -174,7 +173,7 @@ For example, the Wind section displays when the strongest forecasted wind is exp
 
 **Camera**
 
-The _[_Cameras](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/blob/main/assets/camera%20tabs%20example)_ displays live camera feeds from each area, showing the last detected activity along with controls for nearby lights for quick actions.
+The _[Cameras](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/blob/main/assets/camera%20tabs%20example)_ displays live camera feeds from each area, showing the last detected activity along with controls for nearby lights for quick actions.
 
 <img width="1920" height="1080" alt="10" src="https://github.com/user-attachments/assets/2395d0d3-5e98-4f0a-82be-5066f307584a" />
 
@@ -220,31 +219,31 @@ Theme / Layout:
 **For new user:**
 - Copy all the code from _[full dashboard yaml](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/blob/main/dashboard.yaml)_ to a new dashboard raw configuration editor to jumpstart your experience.
 - Install the required HACS components (such as simple swipe card, stack-in-card, popup-card, etc. - see your setup for what’s needed).
-- To unlock the full functionality (like weather icons, notification counts, and more), you’ll need to add the corresponding [sensors](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/template%20sensor) to your config.
-- For the Hue scene, you'll need to have the automation, scripts, input boolean, input text, and input number in your system that you can find in [hue asset folder](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/hue%20asset). For the images, you can get them from [here](https://github.com/Hypfer/hass-scene_presets/blob/master/custom_components/scene_presets/assets/Readme.md).
+- To unlock the full functionality (like weather icons, notification counts, and more), you’ll need to add the corresponding _[sensors](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/template%20sensor)_ to your config.
+- For the Hue scene, you'll need to have the automation, scripts, input boolean, input text, and input number in your system that you can find in _[hue asset folder](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/hue%20asset)._ For the images, you can get them from _[here](https://github.com/Hypfer/hass-scene_presets/blob/master/custom_components/scene_presets/assets/Readme.md)._
 - Apply the MD3 theme and select your preferred colors. It is accessible from Overview page > More > Bucket Fill Icon
-- Apply [wallpaper](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/wallpaper/) (optional)
+- Apply _[wallpaper](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/wallpaper/)_ (optional)
 - Set the companion app to full screen (optional)
 
 **For existing user:**
-- Review the [streamline_template](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/blob/main/assets/streamline_templates) to see if you want to add / modify the previous version to the new version.
+- Review the _[streamline_template](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/blob/main/assets/streamline_templates)_ to see if you want to add / modify the previous version to the new version.
 - Choose which card / visuals that you like to be added to your installation by clicking the hyperlink provided in the description above.
-- Apply [wallpaper](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/wallpaper/) (optional)
+- Apply _[wallpaper](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/wallpaper/)_ (optional)
 - Set the companion app to full screen (optional)
 
 # 📚 Credits
 
 This project builds upon the work of:
-- Nerwyn – [Material You Theme](https://github.com/Nerwyn/material-you-theme) & [Material You Utilities](https://github.com/Nerwyn/material-you-utilities)
-- [MySmartHome](https://www.youtube.com/@My_Smart_Home) - for the new simple tabs card, button cards styling, sliders, etc
+- Nerwyn – _[Material You Theme](https://github.com/Nerwyn/material-you-theme)_ & _[Material You Utilities](https://github.com/Nerwyn/material-you-utilities)_
+- _[MySmartHome](https://www.youtube.com/@My_Smart_Home)_ - for the new simple tabs card, button cards styling, sliders, etc
 - Other community members who kindly shared their cards
 
 # 💖 Support My Work  
 
 If you want to hire me to make your personal dashboard, you can hit me up on one of these social media platforms below:
 - Email at  _reynaldi.sutrisno.rs16@gmail.com_
-- [Reddit](https://www.reddit.com/u/ElementZoom/s/dr4NN0mTtj)
-- [Facebook](https://www.facebook.com/profile.php?id=61578092475703)
+- _[Reddit](https://www.reddit.com/u/ElementZoom/s/dr4NN0mTtj)_
+- _[Facebook](https://www.facebook.com/profile.php?id=61578092475703)_
 
-Or you can support me on [Ko-fi](https://ko-fi.com/ElementZoom).
+Or you can support me on _[Ko-fi](https://ko-fi.com/ElementZoom)._
 Your support helps me keep creating and sharing more awesome open-source tools! Thank you for being part of this journey 🚀
