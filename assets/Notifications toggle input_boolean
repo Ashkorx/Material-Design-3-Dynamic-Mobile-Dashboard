@@ -1,0 +1,12 @@
+input_boolean:
+  guest_mode:
+    name: Guest Mode
+    icon: mdi:account-group
+
+  rubbish:
+    name: Rubbish Day
+    icon: mdi:trash-can
+
+  recycle:
+    name: Recycle Day
+    icon: mdi:recycle
