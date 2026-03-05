@@ -80,7 +80,7 @@ cards:
           entity: geonet.
           tap_action:
             action: navigate
-            navigation_path: /tablet-dashboard/notifications
+            navigation_path: "#weather-panel"
           icon: mdi:earth
           icon_color: >
             {% set mag =
@@ -99,7 +99,7 @@ cards:
           entity: sensor.volcano_rotorua
           tap_action:
             action: navigate
-            navigation_path: /tablet-dashboard/notifications
+            navigation_path: "#weather-panel"
           icon: >
             {{ state_attr('sensor.volcano_rotorua', 'icon') or
             'mdi:image-filter-hdr' }}
@@ -122,7 +122,7 @@ cards:
           entity: sensor.home_metservice_weather_warnings
           tap_action:
             action: navigate
-            navigation_path: /tablet-dashboard/notifications
+            navigation_path: "#weather-panel"
           icon: mdi:alert
           icon_color: orange
       - type: template
@@ -133,7 +133,7 @@ cards:
           navigation_path: "#notifications"
         hold_action:
           action: none
-        card_mod:
+        uix:
           style: >
             ha-card {
               position: relative;
@@ -150,7 +150,7 @@ cards:
               position: absolute;
               top: -3px;
               right: -3px;
-              background-color: var(--md-sys-color-on-primary);
+              background-color: color-mix(in srgb, var(--md-sys-color-on-primary) 50%, transparent);
               color: var(--md-sys-color-primary);
               border-radius: 50%;
               width: 16px;
@@ -163,7 +163,7 @@ cards:
 
             } {% endif %}
     alignment: end
-    card_mod:
+    uix:
       style: |
         ha-card {
           position: absolute;
@@ -173,8 +173,8 @@ cards:
         }
         @keyframes fadeInRight {
           from {
-            opacity: 0;
-            transform: translateX(40px);
+            opacity: 1;
+            transform: translateX(8px);
           }
           to {
             opacity: 1;
