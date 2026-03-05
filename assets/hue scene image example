@@ -6,15 +6,15 @@ show_pagination: false
 auto_hide_pagination: 0
 auto_height: false
 loop_mode: infinite
-card_mod:
+uix:
   style: |
     :host {
-      animation: slideDown 0.15s ease-out 1.4s both;
+      animation: slideDown 0.15s ease-out 0.7s both;
     }
     @keyframes slideDown {
       from { 
-        opacity: 0;
-        transform: translateY(-20px);
+        opacity: 1;
+        transform: translateY(-4px);
       }
       to { 
         opacity: 1;
